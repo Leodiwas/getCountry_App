@@ -1,15 +1,11 @@
 class Country {
   _parentEl = document.querySelector(".countryBox");
   _input = document.querySelector(".input__search");
+  _overlay = document.querySelector(".overlay");
   _countryData;
 
-  // constructor() {
-  //   this._loader();
-  // }
-
-  _loader() {
-    console.log("yes");
-    document.querySelector(".overlay").classList.toggle("hidden");
+  _toggleOverlay() {
+    return this._overlay.classList.toggle("hidden");
   }
 
   _renderError() {
@@ -38,7 +34,6 @@ class Country {
        </article>
           `;
 
-    console.log("working");
     this._parentEl.insertAdjacentHTML("afterbegin", markup);
     this._parentEl.style.opacity = 1;
   }
@@ -48,8 +43,6 @@ class Country {
       if (e.key === "Enter") {
         handler(e.target.value);
         e.target.value = "";
-        console.log("working");
-        return this._loader();
       }
     });
   }
