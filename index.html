@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get__Country</title>
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/img/logo.png"
+      type="image/x-icon"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/src/css/style.css" />
+    <!-- script -->
+    <script type="module" defer src="./assets/src/js/controller.js"></script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar__items">
+          <div class="navbar__items-title">
+            <h2>Where in the world ?</h2>
+          </div>
+          <div class="navbar__items-screenMode">
+            <svg class="screenMode__svg">
+              <use href="./assets/img/darkMode.svg#darkMode"></use>
+            </svg>
+            <h4>Dark Mode</h4>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- main -->
+    <main class="main">
+      <div class="container">
+        <section class="main__searchBox">
+          <input
+            type="text"
+            class="input__search"
+            placeholder="search for a country..."
+            required
+            autocomplete="off"
+          />
+          <div class="search__svg-Box">
+            <svg class="search__svg">
+              <use href="./assets/img/searchh.svg#search"></use>
+            </svg>
+          </div>
+        </section>
+        <!-- Countriees Flag -->
+        <section class="countryBox">
+          <!-- <article class="country">
+            <img class="country__img" src="./assets/img/nepalFlag.webp" />
+            <div class="country__data">
+              <h3 class="country__name">COUNTRY</h3>
+              <h4 class="country__region">REGION</h4>
+              <p class="country__row"><span>👫</span>POP people</p>
+              <p class="country__row"><span>🗣️</span>LANG</p>
+              <p class="country__row"><span>💰</span>CUR</p>
+            </div>
+          </article> -->
+        </section>
+      </div>
+    </main>
+    <div class="overlay hidden">
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+</html>
