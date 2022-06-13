@@ -37,6 +37,10 @@ input {
   font-size: 1.8rem;
   color: #888;
 }
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
 
 /* ============= Navbar ============ */
 
@@ -207,7 +211,7 @@ input {
   width: 1.3rem;
   height: 1.3rem;
   border-radius: 50%;
-  background: #fff;
+  background: rgb(255, 255, 255);
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {
@@ -251,6 +255,57 @@ input {
   }
 }
 
+/* ============= Error Message ============ */
+.errorBox {
+  position: absolute;
+  top: 66%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.error {
+  display: flex;
+  text-align: center;
+  position: relative;
+  margin: auto;
+  top: 55%;
+  gap: 2rem;
+  padding: 2rem;
+  width: 44rem;
+  border-radius: 1.2rem;
+
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.errorMsg {
+  display: flex;
+  align-items: center;
+}
+
+.errorMsg > h4 {
+  width: 20ch;
+}
+
+.errorBtn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 2.6rem;
+  width: 2.6rem;
+  border-radius: 0.4rem;
+  background-color: #ff3333;
+}
+
+.errorBtn > svg {
+  height: 2.6rem;
+  width: 2.6rem;
+}
+
 /* ============= Media Queries ============ */
 
 @media screen and (max-width: 468px) {
@@ -265,5 +320,14 @@ input {
   }
   .country {
     margin-bottom: 8rem;
+  }
+  .errorBox {
+    top: 60%;
+  }
+  .error {
+    width: 28rem;
+  }
+  .errorSvg {
+    display: none;
   }
 }

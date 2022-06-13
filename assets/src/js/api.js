@@ -19,6 +19,7 @@ export const AJAX = async (url) => {
     if (!res.ok) throw new Error(`${res.message} (${res.status})`);
     return country._renderCountry(data[0]);
   } catch (err) {
+    country._toggleOverlay();
     throw err;
   }
 };

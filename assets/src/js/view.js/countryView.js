@@ -4,12 +4,21 @@ class Country {
   _overlay = document.querySelector(".overlay");
   _countryData;
 
+  constructor() {
+    this._hideOverlay();
+  }
+
   _toggleOverlay() {
     return this._overlay.classList.toggle("hidden");
   }
 
-  _renderError() {
-    const markUp = ``;
+  _hideOverlay() {
+    this._overlay.addEventListener("click", (e) => {
+      const btnClose = e.target.closest(".errorBtn");
+      if (!btnClose) return;
+
+      this._toggleOverlay();
+    });
   }
 
   _renderCountry(country) {

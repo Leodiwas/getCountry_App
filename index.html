@@ -65,13 +65,31 @@
         </section>
       </div>
     </main>
-    <div class="overlay hidden">
+    <section class="overlay hidden">
       <div class="lds-ellipsis">
         <div></div>
         <div></div>
         <div></div>
         <div></div>
       </div>
-    </div>
+      <div class="errorBox">
+        <div class="error">
+          <svg class="errorSvg">
+            <use href="./assets/img/errorWarning.svg#error"></use>
+          </svg>
+          <div class="errorMsg">
+            <h4>Request took too long! Timeout after 1 second !!!</h4>
+          </div>
+          <button class="errorBtn">
+            <svg>
+              <use
+                href="./assets/img/close.svg#close"
+                class="img-responsive"
+              ></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
