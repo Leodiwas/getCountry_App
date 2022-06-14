@@ -1,3 +1,15 @@
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gray: #e5e5e5;
+  --color-darkGray: #888;
+  --color-primary: #5ec576;
+  --color-secondary: #ffcb03;
+  --color-tertiary: #ff585f;
+
+  --background-dark: rgb(19, 20, 23);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,12 +25,41 @@ body {
   font-family: system-ui;
   position: relative;
   min-height: 100vh;
-  background-color: #e5e5e5;
+  transition: all 0.5s;
 }
 
 .container {
   max-width: 1400px;
   margin: auto;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.darkBackGround {
+  background-color: var(--background-dark);
+}
+
+.whiteText {
+  color: var(--color-white);
+}
+
+/* ============= Scrool Bar ============ */
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+  width: 2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 2rem;
+  height: 2rem;
 }
 
 /* ============= TYPOGRAPHY ============ */
@@ -35,18 +76,19 @@ h3 {
 h4,
 input {
   font-size: 1.8rem;
-  color: #888;
+  color: var(--color-darkGray);
 }
+
+input {
+  box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
 .img-responsive {
   max-width: 100%;
   height: auto;
 }
 
 /* ============= Navbar ============ */
-
-.navbar {
-  background-color: #fff;
-}
 
 .navbar__items {
   display: flex;
@@ -56,17 +98,26 @@ input {
   padding: 2rem;
   width: 100%;
 }
+
+.navbar h4 {
+  color: var(--color-black);
+  transition: all 0.5s;
+}
+
 .navbar__items-screenMode {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
 }
 .screenMode__svg {
-  height: 4rem;
-  width: 4rem;
-}
-.navbar h4 {
-  color: #000;
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.5s;
+  height: 3.6rem;
+  width: 3.6rem;
 }
 
 /* ============= main ============ */
@@ -118,14 +169,18 @@ input {
 }
 
 .country {
-  background-color: #fff;
-  box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
   font-size: 1.8rem;
   width: 30rem;
   border-radius: 0.7rem;
   margin-bottom: 4rem;
+  transition: all 0.5s;
+  background-color: var(--color-white);
+  box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
+}
 
-  /* overflow: hidden; */
+.country:hover {
+  transform: scale(1.04);
 }
 
 .country h4 {
@@ -140,7 +195,7 @@ input {
   width: 30rem;
   height: 17rem;
   object-fit: cover;
-  background-color: #eee;
+  background-color: var(--color-gray);
   border-top-left-radius: 0.7rem;
   border-top-right-radius: 0.7rem;
 }
@@ -172,14 +227,8 @@ input {
 .images img.parallel {
   width: 40rem;
   margin: 2rem;
-  border: 3rem solid white;
+  border: 3rem solid var(--color-white);
   box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
-}
-
-/* ============= Overlay ============ */
-.hidden {
-  visibility: hidden;
-  opacity: 0;
 }
 
 /* ============= Overlay ============ */
@@ -211,7 +260,7 @@ input {
   width: 1.3rem;
   height: 1.3rem;
   border-radius: 50%;
-  background: rgb(255, 255, 255);
+  background: var(--color-white);
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {
@@ -273,7 +322,7 @@ input {
   width: 44rem;
   border-radius: 1.2rem;
 
-  background-color: #fff;
+  background-color: var(--color-white);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -298,7 +347,7 @@ input {
   height: 2.6rem;
   width: 2.6rem;
   border-radius: 0.4rem;
-  background-color: #ff3333;
+  background-color: var(--color-tertiary);
 }
 
 .errorBtn > svg {

@@ -1,15 +1,35 @@
 class Country {
-  _parentEl = document.querySelector(".countryBox");
+  _navbar = document.querySelector(".navbar");
+  _countryContainer = document.querySelector(".countryBox");
   _input = document.querySelector(".input__search");
   _overlay = document.querySelector(".overlay");
   _countryData;
 
   constructor() {
     this._hideOverlay();
+    this._toggleMode();
   }
 
   _toggleOverlay() {
     return this._overlay.classList.toggle("hidden");
+  }
+
+  _toggleMode() {
+    this._navbar.addEventListener("click", (e) => {
+      const btnMode = e.target.closest(".screenMode__svg");
+      if (!btnMode) return;
+
+      [".light", ".dark"].forEach((c) =>
+        document.querySelector(c).classList.toggle("hidden")
+      );
+
+      ["body", ".navbar__items-title"].forEach((c) => {
+        if (c === "body")
+          document.querySelector(c).classList.toggle("darkBackGround");
+        if (c === ".navbar__items-title")
+          document.querySelector(c).classList.toggle("whiteText");
+      });
+    });
   }
 
   _hideOverlay() {
@@ -43,8 +63,8 @@ class Country {
        </article>
           `;
 
-    this._parentEl.insertAdjacentHTML("afterbegin", markup);
-    this._parentEl.style.opacity = 1;
+    this._countryContainer.insertAdjacentHTML("afterbegin", markup);
+    this._countryContainer.style.opacity = 1;
   }
 
   _country(handler) {
