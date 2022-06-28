@@ -24,7 +24,7 @@ html {
 body {
   font-family: system-ui;
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   transition: all 0.5s;
 }
 
